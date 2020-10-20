@@ -10,7 +10,7 @@
     <script src='/vendor.js'></script>
     <script src='/app.js'></script>
     <style type="text/css" media="all">
-      body { margin-top: 60px; }
+      body { margin-top: 80px; }
       .templates { display: none; }
       .inline-list { margin-bottom: 0px; }
       .inline-list li {
@@ -36,7 +36,13 @@
         background: #666;
       }
       .nav-container a { color: white; }
+      .navbar-padding {
+        padding-top: 7px;
+        display: inline-block;
+      }
     </style>
+    <meta name="google-signin-client_id" content="976690780909-ej1bgh5jgc363jvdimgkbiblm7hftch5.apps.googleusercontent.com" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body> 
     <div class='markup'>
@@ -45,9 +51,18 @@
           <li><a class='text-lg' href="#">LearnJS</a></li>
           <li><a href="#problem-1">Start</a></li>
         </ul>
+        <div class='four columns signin-bar'>
+          <span class='navbar-padding u-pull-right'>
+            <span class="g-signin2" data-onsuccess="googleSignIn"></span>
+          </span>
+        </div>
       </div>
       <div class='view-container container'></div>
       <div class='templates'>
+        <div class='profile-link navbar-padding-lg'>
+          <a href="#profile"></a>
+        </div>
+
         <div class='problem-view'>
           <h3 class='title'></h3>
           <p data-name='description'></p>
@@ -81,6 +96,11 @@
         <li class='skip-btn'>
           <a>Skip This Problem</a>
         </li>
+
+        <div class='profile-view'>
+          <h3>Your Profile</h3>
+          <div class='email'></div>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
